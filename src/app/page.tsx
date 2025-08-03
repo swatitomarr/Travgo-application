@@ -348,7 +348,7 @@ export default function LandingPage() {
               Ready to Start Your Adventure?
             </h2>
             <p className="text-xl text-slate-600 mb-10 leading-relaxed">
-              Join thousands of travelers who trust GlobeTrekker for their group trip planning.
+              Join thousands of travelers who trust Travgo for their group trip planning.
             </p>
             <Link href="/dashboard">
               <Button
