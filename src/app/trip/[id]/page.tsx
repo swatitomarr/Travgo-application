@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Progress } from "@/components/ui/progress"
-import { Globe, Calendar, DollarSign, MapPin, Settings, Share, Bell, ChevronLeft, Plus } from "lucide-react"
+import { Calendar, DollarSign, MapPin, Settings, Share, Bell, ChevronLeft, Plus, Navigation } from "lucide-react"
 import Link from "next/link"
 import { TripOverview } from "@/components/trip-overview"
 import { TripDestinations } from "@/components/trip-destinations"
@@ -62,10 +62,10 @@ const mockTrip = {
     { id: 2, name: "Rome", country: "Italy", votes: 3, status: "confirmed" },
     { id: 3, name: "Barcelona", country: "Spain", votes: 4, status: "confirmed" },
     { id: 4, name: "Amsterdam", country: "Netherlands", votes: 2, status: "voting" },
-  ],
+  ] as const,
 }
 
-export default function TripDetails({ params }: { params: { id: string } }) {
+export default function TripDetails() {
   const [activeTab, setActiveTab] = useState("overview")
 
   return (
@@ -83,7 +83,7 @@ export default function TripDetails({ params }: { params: { id: string } }) {
               </Link>
               <div className="flex items-center space-x-3">
                 <div className="p-2 bg-indigo-600 rounded-xl shadow-sm">
-                  <Globe className="h-5 w-5 text-white" />
+                  <Navigation className="h-5 w-5 text-white" />
                 </div>
                 <span className="text-xl font-semibold text-slate-900 tracking-tight">Travgo</span>
               </div>

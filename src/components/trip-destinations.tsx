@@ -30,6 +30,7 @@ import {
   ThumbsUp,
   MessageCircle,
 } from "lucide-react"
+import Image from "next/image"
 
 interface Destination {
   id: number
@@ -40,7 +41,7 @@ interface Destination {
 }
 
 interface TripDestinationsProps {
-  destinations: Destination[]
+  destinations:readonly Destination[]
 }
 
 export function TripDestinations({ destinations }: TripDestinationsProps) {
@@ -229,11 +230,16 @@ export function TripDestinations({ destinations }: TripDestinationsProps) {
               key={destination.id}
               className="hover:shadow-xl transition-all duration-300 cursor-pointer bg-gradient-to-br from-white to-blue-50 border-blue-200 shadow-lg"
             >
+             
               <div className="aspect-video relative overflow-hidden rounded-t-lg">
-                <img
+                <Image
                   src={destination.image || "/placeholder.svg"}
                   alt={destination.name}
-                  className="object-cover w-full h-full"
+                  fill
+                  className="object-cover"
+                  style={{ objectFit: "cover" }}
+                  sizes="(max-width: 768px) 100vw, 25vw"
+                  priority={true}
                 />
                 <div className="absolute top-2 right-2">
                   <Badge variant="secondary" className="bg-white/90 text-blue-700">

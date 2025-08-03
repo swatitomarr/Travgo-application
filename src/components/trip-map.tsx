@@ -48,7 +48,7 @@ interface TripMapPin {
 }
 
 interface TripMapProps {
-  destinations: any[]
+  destinations: readonly unknown[]
 }
 
 const mockPins: TripMapPin[] = [
@@ -115,7 +115,7 @@ const mockPins: TripMapPin[] = [
   },
 ]
 
-export function TripMap({ destinations }: TripMapProps) {
+export function TripMap({ }: TripMapProps) {
   const [selectedPin, setSelectedPin] = useState<TripMapPin | null>(null)
   const [isAddPinDialogOpen, setIsAddPinDialogOpen] = useState(false)
   const [visibleLayers, setVisibleLayers] = useState({

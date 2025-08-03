@@ -8,7 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Separator } from "@/components/ui/separator"
-import { Globe, Mail, Lock, User, Eye, EyeOff } from "lucide-react"
+import {  Mail, Lock, User, Eye, EyeOff, Navigation } from "lucide-react"
 import Link from "next/link"
 
 export default function AuthPage() {
@@ -41,7 +41,7 @@ export default function AuthPage() {
         <div className="text-center mb-8">
           <Link href="/" className="inline-flex items-center space-x-3 mb-6">
             <div className="p-2 bg-indigo-600 rounded-xl shadow-sm">
-              <Globe className="h-6 w-6 text-white" />
+              <Navigation className="h-6 w-6 text-white" />
             </div>
             <span className="text-2xl font-semibold text-slate-900 tracking-tight">Travgo</span>
           </Link>

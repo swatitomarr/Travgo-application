@@ -4,8 +4,14 @@ import { Progress } from "@/components/ui/progress"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Calendar, MapPin, Users, DollarSign, Clock, Plane, Hotel, Camera } from "lucide-react"
 
+interface Trip {
+  spent: number
+  budget: number
+  // Add other fields as needed
+}
+
 interface TripOverviewProps {
-  trip: any
+  trip: Trip
 }
 
 export function TripOverview({ trip }: TripOverviewProps) {

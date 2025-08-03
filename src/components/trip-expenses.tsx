@@ -48,8 +48,13 @@ interface Expense {
   receipt?: string
 }
 
+interface Trip {
+  budget: number
+  members: { id: number; name: string }[]
+}
+
 interface TripExpensesProps {
-  trip: any
+  trip: Trip
 }
 
 const mockExpenses: Expense[] = [
@@ -122,7 +127,7 @@ export function TripExpenses({ trip }: TripExpensesProps) {
     const balances: Record<string, number> = {}
 
     // Initialize balances
-    trip.members.forEach((member: any) => {
+    trip.members.forEach((member: { id: number; name: string }) => {
       balances[member.name] = 0
     })
 
@@ -198,7 +203,7 @@ export function TripExpenses({ trip }: TripExpensesProps) {
                 Add Expense
               </Button>
             </DialogTrigger>
-            <DialogContent>
+            <DialogContent className="z-50 max-w-lg">
               <DialogHeader>
                 <DialogTitle>Add New Expense</DialogTitle>
                 <DialogDescription>Record a new expense for the trip</DialogDescription>
@@ -237,7 +242,7 @@ export function TripExpenses({ trip }: TripExpensesProps) {
                       <SelectValue placeholder="Who paid?" />
                     </SelectTrigger>
                     <SelectContent>
-                      {trip.members.map((member: any) => (
+                      {trip.members.map((member: { id: number; name: string }) => (
                         <SelectItem key={member.id} value={member.name}>
                           {member.name}
                         </SelectItem>
@@ -248,7 +253,7 @@ export function TripExpenses({ trip }: TripExpensesProps) {
                 <div>
                   <Label>Split Between</Label>
                   <div className="grid grid-cols-2 gap-2 mt-2">
-                    {trip.members.map((member: any) => (
+                    {trip.members.map((member: { id: number; name: string }) => (
                       <label key={member.id} className="flex items-center space-x-2">
                         <input type="checkbox" defaultChecked className="rounded" />
                         <span className="text-sm">{member.name}</span>

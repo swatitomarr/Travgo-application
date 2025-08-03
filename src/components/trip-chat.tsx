@@ -29,11 +29,18 @@ interface Message {
   content: string
   timestamp: string
   type: "text" | "image" | "file" | "poll" | "expense" | "location"
-  metadata?: any
+  metadata?: unknown
+}
+
+interface Member {
+  id: number
+  name: string
+  avatar?: string
+  role?: string
 }
 
 interface TripChatProps {
-  members: any[]
+  members: Member[]
 }
 
 const mockMessages: Message[] = [
@@ -153,7 +160,10 @@ export function TripChat({ members }: TripChatProps) {
                   </div>
                   <p className="text-sm">{msg.content}</p>
                   <Badge variant="secondary" className="text-xs">
-                    ${msg.metadata.amount} - {msg.metadata.category}
+                    {(() => {
+                      const meta = msg.metadata as { amount?: number; category?: string } | undefined;
+                      return meta ? `$${meta.amount ?? ""} - ${meta.category ?? ""}` : "";
+                    })()}
                   </Badge>
                 </div>
               )}
@@ -165,8 +175,18 @@ export function TripChat({ members }: TripChatProps) {
                     <span className="text-sm font-medium">Location Shared</span>
                   </div>
                   <div>
-                    <p className="text-sm font-medium">{msg.metadata.name}</p>
-                    <p className="text-xs opacity-80">{msg.metadata.address}</p>
+                    <p className="text-sm font-medium">
+                      {(() => {
+                        const meta = msg.metadata as { name?: string } | undefined;
+                        return meta?.name ?? "";
+                      })()}
+                    </p>
+                    <p className="text-xs opacity-80">
+                      {(() => {
+                        const meta = msg.metadata as { address?: string } | undefined;
+                        return meta?.address ?? "";
+                      })()}
+                    </p>
                   </div>
                   <Button size="sm" variant="secondary" className="text-xs">
                     View on Map

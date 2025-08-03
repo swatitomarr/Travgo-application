@@ -17,8 +17,9 @@ import {
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Plus, MapPin, Users, Calendar, DollarSign, Search, Filter, Globe, Plane, TrendingUp } from "lucide-react"
+import { Plus, MapPin, Users, Calendar, DollarSign, Search, Filter, Globe, Plane, TrendingUp, Navigation } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 // Mock data
 const mockTrips = [
@@ -80,7 +81,7 @@ export default function Dashboard() {
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <Link href="/" className="flex items-center space-x-3">
             <div className="p-2 bg-indigo-600 rounded-xl shadow-sm">
-              <Globe className="h-6 w-6 text-white" />
+              <Navigation className="h-6 w-6 text-white" />
             </div>
             <span className="text-2xl font-semibold text-slate-900 tracking-tight">Travgo</span>
           </Link>
@@ -259,7 +260,15 @@ export default function Dashboard() {
             <Link key={trip.id} href={`/trip/${trip.id}`}>
               <Card className="border-slate-200 bg-white shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 cursor-pointer rounded-xl">
                 <div className="aspect-video relative overflow-hidden rounded-t-xl">
-                  <img src={trip.image || "/placeholder.svg"} alt={trip.title} className="object-cover w-full h-full" />
+                  <Image
+                    src={trip.image || "/placeholder.svg"}
+                    alt={trip.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    priority={trip.id === 1}
+                  />
+                 
                   <div className="absolute top-3 right-3">
                     <Badge
                       variant={trip.status === "active" ? "default" : "secondary"}

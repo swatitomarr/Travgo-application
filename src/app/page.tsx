@@ -16,11 +16,11 @@ import {
   Calendar,
   Vote,
   Plane,
-  Globe,
-  Star,
+   Star,
   Heart,
   Zap,
   ArrowRight,
+  Navigation,
   //Camera,
   //Compass,
 } from "lucide-react"
@@ -37,7 +37,7 @@ export default function LandingPage() {
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <div className="p-2 bg-indigo-600 rounded-xl shadow-sm">
-              <Globe className="h-6 w-6 text-white" />
+              <Navigation className="h-6 w-6 text-white" />
             </div>
             <span className="text-2xl font-semibold text-slate-900 tracking-tight">Travgo</span>
           </div>
@@ -153,12 +153,12 @@ export default function LandingPage() {
               Everything You Need for Group Travel
             </h2>
             <p className="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
-              From destination discovery to expense splitting, we've got every aspect of group travel planning covered.
+              From destination discovery to expense splitting, we&apos;ve got every aspect of group travel planning covered.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="group relative overflow-hidden border-0 bg-gradient-to-br from-blue-500/10 via-blue-400/5 to-indigo-500/10 backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 rounded-2xl border border-blue-500/20">
+            <Card className="group relative overflow-hidden bg-gradient-to-br from-blue-500/10 via-blue-400/5 to-indigo-500/10 backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 rounded-2xl border border-blue-500/20">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <CardHeader className="relative text-center p-8">
                 <div className="relative mx-auto mb-6 w-fit">
@@ -183,7 +183,7 @@ export default function LandingPage() {
               </CardHeader>
             </Card>
 
-            <Card className="group relative overflow-hidden border-0 bg-gradient-to-br from-blue-500/10 via-blue-400/5 to-indigo-500/10 backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 rounded-2xl border border-blue-500/20">
+            <Card className="group relative overflow-hidden bg-gradient-to-br from-blue-500/10 via-blue-400/5 to-indigo-500/10 backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 rounded-2xl border border-blue-500/20">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <CardHeader className="relative text-center p-8">
                 <div className="relative mx-auto mb-6 w-fit">
@@ -208,7 +208,7 @@ export default function LandingPage() {
               </CardHeader>
             </Card>
 
-            <Card className="group relative overflow-hidden border-0 bg-gradient-to-br from-blue-500/10 via-blue-400/5 to-indigo-500/10 backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 rounded-2xl border border-blue-500/20">
+            <Card className="group relative overflow-hidden bg-gradient-to-br from-blue-500/10 via-blue-400/5 to-indigo-500/10 backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 rounded-2xl border border-blue-500/20">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <CardHeader className="relative text-center p-8">
                 <div className="relative mx-auto mb-6 w-fit">
@@ -233,7 +233,7 @@ export default function LandingPage() {
               </CardHeader>
             </Card>
 
-            <Card className="group relative overflow-hidden border-0 bg-gradient-to-br from-blue-500/10 via-blue-400/5 to-indigo-500/10 backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 rounded-2xl border border-blue-500/20">
+            <Card className="group relative overflow-hidden bg-gradient-to-br from-blue-500/10 via-blue-400/5 to-indigo-500/10 backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 rounded-2xl border border-blue-500/20">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <CardHeader className="relative text-center p-8">
                 <div className="relative mx-auto mb-6 w-fit">
@@ -258,7 +258,7 @@ export default function LandingPage() {
               </CardHeader>
             </Card>
 
-            <Card className="group relative overflow-hidden border-0 bg-gradient-to-br from-blue-500/10 via-blue-400/5 to-indigo-500/10 backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 rounded-2xl border border-blue-500/20">
+            <Card className="group relative overflow-hidden bg-gradient-to-br from-blue-500/10 via-blue-400/5 to-indigo-500/10 backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 rounded-2xl border border-blue-500/20">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <CardHeader className="relative text-center p-8">
                 <div className="relative mx-auto mb-6 w-fit">
@@ -283,7 +283,7 @@ export default function LandingPage() {
               </CardHeader>
             </Card>
 
-            <Card className="group relative overflow-hidden border-0 bg-gradient-to-br from-blue-500/10 via-blue-400/5 to-indigo-500/10 backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 rounded-2xl border border-blue-500/20">
+            <Card className="group relative overflow-hidden bg-gradient-to-br from-blue-500/10 via-blue-400/5 to-indigo-500/10 backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 rounded-2xl border border-blue-500/20">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <CardHeader className="relative text-center p-8">
                 <div className="relative mx-auto mb-6 w-fit">
@@ -370,7 +370,7 @@ export default function LandingPage() {
             <div>
               <div className="flex items-center space-x-3 mb-6">
                 <div className="p-2 bg-indigo-600 rounded-xl">
-                  <Globe className="h-5 w-5 text-white" />
+                  <Navigation className="h-5 w-5 text-white" />
                 </div>
                 <span className="text-xl font-semibold">Travgo</span>
               </div>
